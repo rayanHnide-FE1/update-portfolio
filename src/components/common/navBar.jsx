@@ -67,8 +67,8 @@ const NavBar = () => {
 </nav> */}
 		{/* </div> */}
 
-	                <div className="d-flex justify-content-center fixed-top mt-5 ">
-					<Navbar collapseOnSelect expand="lg" >
+	                <div className="d-flex justify-content-center fixed-top mt-5  ">
+					<Navbar collapseOnSelect expand="lg"  >
       <Container >
         <Navbar.Brand >UpDate</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
