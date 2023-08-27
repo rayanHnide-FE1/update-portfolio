@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+
 
 import "./styles/navBar.css";
 
@@ -34,23 +38,23 @@ const NavBar = () => {
 		<React.Fragment>
 			
 
-
-        <div className="d-flex justify-content-center fixed-top">
-		<nav className="navbar navbar-expand-lg  w-50 ">
-  <div className="container-fluid">
+{/* 
+        <div classNameName="d-flex justify-content-center fixed-top">
+		<nav classNameName="navbar navbar-expand-lg  w-50 ">
+  <div classNameName="container-fluid">
     
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
+    <button classNameName="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span classNameName="navbar-toggler-icon"></span>
     </button>
-    <div className="collapse navbar-collapse d-flex justify-content-center" id="navbarNav">
-     	 <ul className="navbar-nav">
+    <div classNameName="collapse navbar-collapse d-flex justify-content-center" id="navbarNav">
+     	 <ul classNameName="navbar-nav">
        
 			{
 				item.map((e)=>{
 					return(
 						<>
-						<li className="nav-item">
-						<Link className="nav-link" to={e.link}>{e.item}</Link>
+						<li classNameName="nav-item">
+						<a classNameName="nav-link" >{e.item}</a>
 						</li>
 						</>
 					)
@@ -60,8 +64,36 @@ const NavBar = () => {
      	 </ul>
     </div>
   </div>
-</nav>
-		</div>
+</nav> */}
+		{/* </div> */}
+
+	                <div className="d-flex justify-content-center fixed-top ">
+					<Navbar collapseOnSelect expand="lg" >
+      <Container >
+        <Navbar.Brand >UpDate</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+        
+          <Nav>
+            {
+				item.map((e)=>{
+					return(
+						<>
+           			 <Nav.Link className="d-flex justify-content-center" >
+						<Link className="nav-item" to={e.link}>
+						{e.item}
+						</Link>
+					 </Nav.Link>
+						
+						</>
+					)
+				})
+			}
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+					</div>
 		</React.Fragment>
 	);
 };
